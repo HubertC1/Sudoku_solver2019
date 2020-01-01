@@ -53,21 +53,21 @@ def count (bo, item):
 
 
 def valid(location):
-    #checking row
+    #check row
     if board[location[0]].count(board[location[0]][location[1]]) > 1:
         return False
     else:
         pass
-    
+    #check collum
     for row in range(0,9):
         if board[row][location[1]] == board[location[0]][location[1]] and row != location[0]:
             return False  
         else:
             pass
-    #checking square
-    for cube_row in range(3*(location[0]//3),3*(location[0]//3)+3):
-        for cube_collum in range(3*(location[1]//3),3*(location[1]//3)+3):
-            if board[cube_row][cube_collum] == board[location[0]][location[1]] and cube_row != location[0] and cube_collum != location[1]:
+    #check square
+    for square_row in range(3*(location[0]//3),3*(location[0]//3)+3):
+        for square_collum in range(3*(location[1]//3),3*(location[1]//3)+3):
+            if board[square_row][square_collum] == board[location[0]][location[1]] and square_row != location[0] and square_collum != location[1]:
                 return False   
             else:
                 pass 
@@ -80,7 +80,7 @@ def solve(bo):
     blanklocs = []
     ind = 0
     solved = False
-    blank_quan = count(bo,0)
+    blank_quan = count(bo,0)f
     for _ in range(0,blank_quan):
         num_recs.append([])
         blanklocs.append(find_blank(bo))
