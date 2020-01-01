@@ -80,7 +80,7 @@ def solve(bo):
     blanklocs = []
     ind = 0
     solved = False
-    blank_quan = count(bo,0)f
+    blank_quan = count(bo,0)
     for _ in range(0,blank_quan):
         num_recs.append([])
         blanklocs.append(find_blank(bo))
